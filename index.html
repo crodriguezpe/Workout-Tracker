@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Workout Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>🏃 Workout Tracker</h1>
+
+<p class="subtitle">Carlos' Fitness Dashboard</p>
+
+</header>
+
+<div class="card">
+
+<h2>Today's Workout</h2>
+
+<label>Date</label>
+<input type="date" id="date">
+
+<label>Program</label>
+<select id="program">
+
+<option>F1</option>
+<option>F2</option>
+<option>F3</option>
+<option>F4</option>
+<option>F5</option>
+<option>F6</option>
+<option>F7</option>
+<option>F8</option>
+<option>F9</option>
+<option>F10</option>
+<option>F11</option>
+<option>F12</option>
+
+</select>
+
+<label>Duration (minutes)</label>
+<input type="number" id="duration" placeholder="30">
+
+<label>Calories</label>
+<input type="number" id="calories" placeholder="300">
+
+<label>Average HR</label>
+<input type="number" id="avgHR" placeholder="125">
+
+<label>Maximum HR</label>
+<input type="number" id="maxHR" placeholder="165">
+
+<label>Weight (lb)</label>
+<input type="number" id="weight" placeholder="180">
+
+<label>Waist (inches)</label>
+<input type="number" step="0.1" id="waist" placeholder="40">
+
+<label>Notes</label>
+<textarea id="notes" rows="4"></textarea>
+
+<button onclick="saveWorkout()">
+Save Workout
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>This Week</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3 id="totalWorkouts">0</h3>
+<p>Workouts</p>
+</div>
+
+<div class="stat">
+<h3 id="totalCalories">0</h3>
+<p>Calories</p>
+</div>
+
+<div class="stat">
+<h3 id="averageHR">0</h3>
+<p>Avg HR</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Workout History</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+<th>Program</th>
+<th>Cal</th>
+<th>Avg HR</th>
+<th>Weight</th>
+
+</tr>
+
+</thead>
+
+<tbody id="history">
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>Today's Core Routine</h2>
+
+<ul class="routine">
+
+<li>✅ Bird Dog - 10 / side</li>
+<li>✅ Dead Bug - 10 / side</li>
+<li>✅ Plank - 30 sec × 2</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
