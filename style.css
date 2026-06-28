@@ -1,244 +1,237 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
 
-background:#000;
-color:white;
-padding:20px;
+    background:#000;
+    color:white;
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+    padding-bottom:120px;
+}
+
+#app{
+
+    max-width:480px;
+
+    margin:auto;
+
+    padding:20px;
 
 }
 
-.container{
+.header{
 
-max-width:700px;
-margin:auto;
+    display:flex;
 
-}
+    justify-content:space-between;
 
-header{
+    align-items:center;
 
-text-align:center;
-margin-bottom:25px;
+    margin-bottom:30px;
 
 }
 
-h1{
+.header h1{
 
-font-size:34px;
-font-weight:700;
+    font-size:38px;
+
+    font-weight:700;
 
 }
 
-.subtitle{
+.header p{
 
-color:#999;
-margin-top:6px;
+    color:#888;
+
+    margin-top:6px;
+
+}
+
+.profileCircle{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    background:#1f1f1f;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+    font-size:22px;
+
+}
+
+.page{
+
+    display:none;
+
+}
+
+.page.active{
+
+    display:block;
+
+}
+
+.heroCard{
+
+    background:linear-gradient(135deg,#0a84ff,#5ac8fa);
+
+    border-radius:28px;
+
+    padding:26px;
+
+    margin-bottom:24px;
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.heroCard h2{
+
+    font-size:20px;
+
+    opacity:.9;
+
+}
+
+.heroCard h3{
+
+    margin-top:10px;
+
+    font-size:42px;
+
+}
+
+.heroCard p{
+
+    margin-top:8px;
+
+    font-size:18px;
+
+}
+
+.ringContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+    margin-bottom:24px;
+
+}
+
+.ringCard{
+
+    background:#1c1c1e;
+
+    border-radius:22px;
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+.ringValue{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#30d158;
+
+}
+
+.ringLabel{
+
+    margin-top:6px;
+
+    color:#999;
+
+    font-size:14px;
 
 }
 
 .card{
 
-background:#1c1c1e;
-border-radius:22px;
-padding:22px;
-margin-bottom:20px;
+    background:#1c1c1e;
 
-box-shadow:0 8px 20px rgba(0,0,0,.35);
+    border-radius:24px;
+
+    padding:24px;
+
+    margin-bottom:22px;
 
 }
 
 .card h2{
 
-margin-bottom:18px;
-font-size:24px;
+    font-size:28px;
+
+    margin-bottom:20px;
 
 }
 
-label{
+.card ul{
 
-display:block;
-margin-top:14px;
-margin-bottom:6px;
-font-size:14px;
-color:#bbb;
+    list-style:none;
 
 }
 
-input,
-select,
-textarea{
+.card li{
 
-width:100%;
+    margin-bottom:14px;
 
-padding:14px;
-
-border:none;
-
-border-radius:14px;
-
-background:#2c2c2e;
-
-color:white;
-
-font-size:17px;
-
-outline:none;
+    font-size:20px;
 
 }
 
-textarea{
+.exercise{
 
-resize:none;
+    display:flex;
 
-}
+    justify-content:space-between;
 
-button{
+    align-items:center;
 
-width:100%;
+    padding:16px 0;
 
-margin-top:24px;
+    border-bottom:1px solid #2c2c2e;
 
-padding:16px;
-
-border:none;
-
-border-radius:18px;
-
-background:#0A84FF;
-
-color:white;
-
-font-size:18px;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:.25s;
+    font-size:20px;
 
 }
 
-button:hover{
+.exercise:last-child{
 
-background:#409CFF;
-
-}
-
-.stats{
-
-display:flex;
-
-justify-content:space-between;
-
-gap:15px;
-
-}
-
-.stat{
-
-flex:1;
-
-background:#2c2c2e;
-
-padding:18px;
-
-border-radius:18px;
-
-text-align:center;
-
-}
-
-.stat h3{
-
-font-size:34px;
-
-color:#30D158;
-
-}
-
-.stat p{
-
-color:#aaa;
-
-margin-top:6px;
-
-}
-
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-}
-
-th{
-
-padding:12px;
-
-text-align:left;
-
-color:#999;
-
-border-bottom:1px solid #333;
-
-}
-
-td{
-
-padding:14px 12px;
-
-border-bottom:1px solid #333;
-
-}
-
-.routine{
-
-list-style:none;
-
-}
-
-.routine li{
-
-padding:14px;
-
-margin-bottom:10px;
-
-background:#2c2c2e;
-
-border-radius:14px;
-
-}
-
-@media(max-width:650px){
-
-.stats{
-
-flex-direction:column;
-
-}
-
-table{
-
-font-size:14px;
-
-}
-
-h1{
-
-font-size:28px;
-
-}
-
-.card{
-
-padding:18px;
-
-}
+    border-bottom:none;
 
 }
