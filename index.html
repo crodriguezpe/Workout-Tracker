@@ -3,148 +3,734 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Workout Tracker</title>
+<title>Reduce Belly Fat</title>
 
 <link rel="stylesheet" href="style.css">
+
+<meta name="theme-color" content="#000000">
 
 </head>
 
 <body>
 
-<div class="container">
+<div id="app">
 
-<header>
+    <!-- ========================= -->
+    <!-- HEADER                    -->
+    <!-- ========================= -->
 
-<h1>🏃 Workout Tracker</h1>
+    <header class="header">
 
-<p class="subtitle">Carlos' Fitness Dashboard</p>
+        <div>
+            <h1>Reduce Belly Fat</h1>
+            <p id="todayDate"></p>
+        </div>
 
-</header>
+        <div class="profileCircle">
+            CR
+        </div>
 
-<div class="card">
+    </header>
 
-<h2>Today's Workout</h2>
 
-<label>Date</label>
-<input type="date" id="date">
+    <!-- ========================= -->
+    <!-- DASHBOARD                 -->
+    <!-- ========================= -->
 
-<label>Program</label>
-<select id="program">
+    <section id="dashboard" class="page active">
 
-<option>F1</option>
-<option>F2</option>
-<option>F3</option>
-<option>F4</option>
-<option>F5</option>
-<option>F6</option>
-<option>F7</option>
-<option>F8</option>
-<option>F9</option>
-<option>F10</option>
-<option>F11</option>
-<option>F12</option>
+        <div class="heroCard">
 
-</select>
+            <h2>Today's Recommendation</h2>
 
-<label>Duration (minutes)</label>
-<input type="number" id="duration" placeholder="30">
+            <h3 id="recommendation">
 
-<label>Calories</label>
-<input type="number" id="calories" placeholder="300">
+                F3
 
-<label>Average HR</label>
-<input type="number" id="avgHR" placeholder="125">
+            </h3>
 
-<label>Maximum HR</label>
-<input type="number" id="maxHR" placeholder="165">
+            <p>
 
-<label>Weight (lb)</label>
-<input type="number" id="weight" placeholder="180">
+                Sweet Spot Fat Burn
 
-<label>Waist (inches)</label>
-<input type="number" step="0.1" id="waist" placeholder="40">
+            </p>
 
-<label>Notes</label>
-<textarea id="notes" rows="4"></textarea>
+        </div>
 
-<button onclick="saveWorkout()">
-Save Workout
-</button>
 
-</div>
 
-<div class="card">
+        <div class="ringContainer">
 
-<h2>This Week</h2>
+            <div class="ringCard">
 
-<div class="stats">
+                <div class="ringValue" id="weeklyCalories">
 
-<div class="stat">
-<h3 id="totalWorkouts">0</h3>
-<p>Workouts</p>
-</div>
+                    0
 
-<div class="stat">
-<h3 id="totalCalories">0</h3>
-<p>Calories</p>
-</div>
+                </div>
 
-<div class="stat">
-<h3 id="averageHR">0</h3>
-<p>Avg HR</p>
-</div>
+                <div class="ringLabel">
 
-</div>
+                    Calories
 
-</div>
+                </div>
 
-<div class="card">
+            </div>
 
-<h2>Workout History</h2>
+            <div class="ringCard">
 
-<table>
+                <div class="ringValue" id="weeklyWorkouts">
 
-<thead>
+                    0
 
-<tr>
+                </div>
 
-<th>Date</th>
-<th>Program</th>
-<th>Cal</th>
-<th>Avg HR</th>
-<th>Weight</th>
+                <div class="ringLabel">
 
-</tr>
+                    Workouts
 
-</thead>
+                </div>
 
-<tbody id="history">
+            </div>
 
-</tbody>
+            <div class="ringCard">
 
-</table>
+                <div class="ringValue" id="averageHR">
 
-</div>
+                    0
 
-<div class="card">
+                </div>
 
-<h2>Today's Core Routine</h2>
+                <div class="ringLabel">
 
-<ul class="routine">
+                    Avg HR
 
-<li>✅ Bird Dog - 10 / side</li>
-<li>✅ Dead Bug - 10 / side</li>
-<li>✅ Plank - 30 sec × 2</li>
+                </div>
 
-</ul>
+            </div>
 
-</div>
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>Your Targets</h2>
+
+            <ul>
+
+                <li>🎯 Weight: 170 lb</li>
+
+                <li>📏 Waist: 37"</li>
+
+                <li>❤️ Avg HR: 120–130 bpm</li>
+
+                <li>🏃 4 workouts this week</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>Today's Core</h2>
+
+            <div class="exercise">
+
+                ✅ Bird Dog
+
+                <span>
+
+                    10 / side
+
+                </span>
+
+            </div>
+
+            <div class="exercise">
+
+                ✅ Dead Bug
+
+                <span>
+
+                    10 / side
+
+                </span>
+
+            </div>
+
+            <div class="exercise">
+
+                ✅ Plank
+
+                <span>
+
+                    2 × 30 sec
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- LOG WORKOUT PAGE          -->
+    <!-- ========================= -->
+
+    <section id="logPage" class="page">
+
+        <div class="card">
+
+            <h2>Log Workout</h2>
+
+            <label>Date</label>
+
+            <input
+                type="date"
+                id="date">
+
+            <label>Program</label>
+
+            <div class="programGrid">
+
+                <button class="programBtn">F1</button>
+                <button class="programBtn">F2</button>
+                <button class="programBtn activeProgram">F3</button>
+                <button class="programBtn">F4</button>
+                <button class="programBtn">F5</button>
+                <button class="programBtn">F6</button>
+                <button class="programBtn">F7</button>
+                <button class="programBtn">F8</button>
+                <button class="programBtn">F9</button>
+                <button class="programBtn">F10</button>
+                <button class="programBtn">F11</button>
+                <button class="programBtn">F12</button>
+
+            </div>
+
+            <label>Duration (minutes)</label>
+
+            <input
+                id="duration"
+                type="number"
+                placeholder="30">
+
+            <label>Calories</label>
+
+            <input
+                id="calories"
+                type="number"
+                placeholder="300">
+
+            <label>Average Heart Rate</label>
+
+            <input
+                id="avgHRInput"
+                type="number"
+                placeholder="126">
+
+            <label>Maximum Heart Rate</label>
+
+            <input
+                id="maxHR"
+                type="number"
+                placeholder="166">
+
+            <label>Weight (lb)</label>
+
+            <input
+                id="weight"
+                type="number"
+                placeholder="180">
+
+            <label>Waist (inches)</label>
+
+            <input
+                id="waist"
+                type="number"
+                step="0.1"
+                placeholder="40">
+
+            <label>Notes</label>
+
+            <textarea
+                id="notes"
+                rows="4"
+                placeholder="How did today's workout feel?"></textarea>
+
+            <button
+                id="saveWorkout">
+
+                Save Workout
+
+            </button>
+
+        </div>
+
+    </section>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Reduce Belly Fat</title>
+
+<link rel="stylesheet" href="style.css">
+
+<meta name="theme-color" content="#000000">
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- ========================= -->
+    <!-- HEADER                    -->
+    <!-- ========================= -->
+
+    <header class="header">
+
+        <div>
+            <h1>Reduce Belly Fat</h1>
+            <p id="todayDate"></p>
+        </div>
+
+        <div class="profileCircle">
+            CR
+        </div>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- DASHBOARD                 -->
+    <!-- ========================= -->
+
+    <section id="dashboard" class="page active">
+
+        <div class="heroCard">
+
+            <h2>Today's Recommendation</h2>
+
+            <h3 id="recommendation">
+
+                F3
+
+            </h3>
+
+            <p>
+
+                Sweet Spot Fat Burn
+
+            </p>
+
+        </div>
+
+
+
+        <div class="ringContainer">
+
+            <div class="ringCard">
+
+                <div class="ringValue" id="weeklyCalories">
+
+                    0
+
+                </div>
+
+                <div class="ringLabel">
+
+                    Calories
+
+                </div>
+
+            </div>
+
+            <div class="ringCard">
+
+                <div class="ringValue" id="weeklyWorkouts">
+
+                    0
+
+                </div>
+
+                <div class="ringLabel">
+
+                    Workouts
+
+                </div>
+
+            </div>
+
+            <div class="ringCard">
+
+                <div class="ringValue" id="averageHR">
+
+                    0
+
+                </div>
+
+                <div class="ringLabel">
+
+                    Avg HR
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>Your Targets</h2>
+
+            <ul>
+
+                <li>🎯 Weight: 170 lb</li>
+
+                <li>📏 Waist: 37"</li>
+
+                <li>❤️ Avg HR: 120–130 bpm</li>
+
+                <li>🏃 4 workouts this week</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>Today's Core</h2>
+
+            <div class="exercise">
+
+                ✅ Bird Dog
+
+                <span>
+
+                    10 / side
+
+                </span>
+
+            </div>
+
+            <div class="exercise">
+
+                ✅ Dead Bug
+
+                <span>
+
+                    10 / side
+
+                </span>
+
+            </div>
+
+            <div class="exercise">
+
+                ✅ Plank
+
+                <span>
+
+                    2 × 30 sec
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- LOG WORKOUT PAGE          -->
+    <!-- ========================= -->
+
+    <section id="logPage" class="page">
+
+        <div class="card">
+
+            <h2>Log Workout</h2>
+
+            <label>Date</label>
+
+            <input
+                type="date"
+                id="date">
+
+            <label>Program</label>
+
+            <div class="programGrid">
+
+                <button class="programBtn">F1</button>
+                <button class="programBtn">F2</button>
+                <button class="programBtn activeProgram">F3</button>
+                <button class="programBtn">F4</button>
+                <button class="programBtn">F5</button>
+                <button class="programBtn">F6</button>
+                <button class="programBtn">F7</button>
+                <button class="programBtn">F8</button>
+                <button class="programBtn">F9</button>
+                <button class="programBtn">F10</button>
+                <button class="programBtn">F11</button>
+                <button class="programBtn">F12</button>
+
+            </div>
+
+            <label>Duration (minutes)</label>
+
+            <input
+                id="duration"
+                type="number"
+                placeholder="30">
+
+            <label>Calories</label>
+
+            <input
+                id="calories"
+                type="number"
+                placeholder="300">
+
+            <label>Average Heart Rate</label>
+
+            <input
+                id="avgHRInput"
+                type="number"
+                placeholder="126">
+
+            <label>Maximum Heart Rate</label>
+
+            <input
+                id="maxHR"
+                type="number"
+                placeholder="166">
+
+            <label>Weight (lb)</label>
+
+            <input
+                id="weight"
+                type="number"
+                placeholder="180">
+
+            <label>Waist (inches)</label>
+
+            <input
+                id="waist"
+                type="number"
+                step="0.1"
+                placeholder="40">
+
+            <label>Notes</label>
+
+            <textarea
+                id="notes"
+                rows="4"
+                placeholder="How did today's workout feel?"></textarea>
+
+            <button
+                id="saveWorkout">
+
+                Save Workout
+
+            </button>
+
+        </div>
+
+    </section>
+      <!-- ========================= -->
+    <!-- HISTORY PAGE -->
+    <!-- ========================= -->
+
+    <section id="historyPage" class="page">
+
+        <div class="card">
+
+            <h2>Workout History</h2>
+
+            <div id="historyList">
+
+                <div class="emptyState">
+
+                    No workouts yet
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PROGRESS PAGE -->
+    <!-- ========================= -->
+
+    <section id="progressPage" class="page">
+
+        <div class="card">
+
+            <h2>Progress</h2>
+
+            <div class="progressRow">
+
+                <div class="progressCard">
+
+                    <span>Current Weight</span>
+
+                    <h3 id="currentWeight">
+
+                        180
+
+                    </h3>
+
+                    <small>lb</small>
+
+                </div>
+
+                <div class="progressCard">
+
+                    <span>Current Waist</span>
+
+                    <h3 id="currentWaist">
+
+                        40
+
+                    </h3>
+
+                    <small>in</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Goals</h2>
+
+            <ul>
+
+                <li>🎯 Reach 170 lb</li>
+
+                <li>📏 Reach 37" waist</li>
+
+                <li>🏃 Complete 4 workouts/week</li>
+
+                <li>❤️ Average HR 120–130 bpm</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Achievements</h2>
+
+            <ul>
+
+                <li>🏅 First Workout</li>
+
+                <li>🔥 5 Workout Streak</li>
+
+                <li>💪 10 Total Workouts</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- BOTTOM NAVIGATION -->
+    <!-- ========================= -->
+
+    <nav class="bottomNav">
+
+        <button class="navButton activeNav"
+
+            data-page="dashboard">
+
+            🏠
+
+            <span>
+
+                Home
+
+            </span>
+
+        </button>
+
+        <button class="navButton"
+
+            data-page="logPage">
+
+            ➕
+
+            <span>
+
+                Log
+
+            </span>
+
+        </button>
+
+        <button class="navButton"
+
+            data-page="historyPage">
+
+            📋
+
+            <span>
+
+                History
+
+            </span>
+
+        </button>
+
+        <button class="navButton"
+
+            data-page="progressPage">
+
+            📈
+
+            <span>
+
+                Progress
+
+            </span>
+
+        </button>
+
+    </nav>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
+    
