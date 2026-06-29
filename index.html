@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
+<title>Reduce Belly Fat</title>
+
+<link rel="stylesheet" href="style.css">
+
+<meta name="theme-color" content="#000000">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+<div>
+
+<h1>Hello Carlos 👋</h1>
+
+<p id="todayDate"></p>
+
+</div>
+
+<div class="avatar">
+
+CR
+
+</div>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h2>Today's Goal</h2>
+
+<div class="goalNumber">
+
+92%
+
+</div>
+
+<p>
+
+Fat Loss Readiness
+
+</p>
+
+<button class="startButton">
+
+START TODAY'S WORKOUT
+
+</button>
+
+</section>
+
+
+
+<!-- QUICK STATS -->
+
+<section class="quickStats">
+
+<div class="statCard calories">
+
+<div class="emoji">
+
+🔥
+
+</div>
+
+<div>
+
+<h3 id="weeklyCalories">
+
+0
+
+</h3>
+
+<p>Weekly Calories</p>
+
+</div>
+
+</div>
+
+
+
+<div class="statCard heart">
+
+<div class="emoji">
+
+❤️
+
+</div>
+
+<div>
+
+<h3 id="avgHR">
+
+0
+
+</h3>
+
+<p>Average HR</p>
+
+</div>
+
+</div>
+
+
+
+<div class="statCard weight">
+
+<div class="emoji">
+
+⚖️
+
+</div>
+
+<div>
+
+<h3 id="currentWeight">
+
+180
+
+</h3>
+
+<p>Current Weight</p>
+
+</div>
+
+</div>
+
+
+
+<div class="statCard waist">
+
+<div class="emoji">
+
+📏
+
+</div>
+
+<div>
+
+<h3 id="currentWaist">
+
+40"
+
+</h3>
+
+<p>Waist</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- TODAY -->
+
+<section class="card">
+
+<h2>Today's Workout</h2>
+
+<div class="workoutHero">
+
+<div>
+
+<h1>
+
+F3
+
+</h1>
+
+<p>
+
+Fat Burn
+
+</p>
+
+</div>
+
+<div class="badge">
+
+30 min
+
+</div>
+
+</div>
+
+<div class="target">
+
+🎯 Target Heart Rate
+
+<strong>
+
+120–135 bpm
+
+</strong>
+
+</div>
+
+</section>
+
+
+
+<!-- CORE -->
+
+<section class="card">
+
+<h2>5-Minute Core</h2>
+
+<div class="exercise">
+
+<span>
+
+🐕 Bird Dog
+
+</span>
+
+<span>
+
+2 × 10
+
+</span>
+
+</div>
+
+<div class="exercise">
+
+<span>
+
+🪲 Dead Bug
+
+</span>
+
+<span>
+
+2 × 10
+
+</span>
+
+</div>
+
+<div class="exercise">
+
+<span>
+
+🟦 Plank
+
+</span>
+
+<span>
+
+2 × 30 sec
+
+</span>
+
+</div>
+
+</section>
+
+
+
+<!-- LOG -->
+
+<section class="card">
+
+<h2>Log Workout</h2>
+
+<label>Date</label>
+
+<input
+type="date"
+id="date">
+
+<label>Program</label>
+
+<div class="programGrid">
+
+<button class="program active">
+
+F1
+
+</button>
+
+<button class="program">
+
+F2
+
+</button>
+
+<button class="program">
+
+F3
+
+</button>
+
+<button class="program">
+
+F4
+
+</button>
+
+<button class="program">
+
+F5
+
+</button>
+
+<button class="program">
+
+F6
+
+</button>
+
+<button class="program">
+
+F7
+
+</button>
+
+<button class="program">
+
+F8
+
+</button>
+
+<button class="program">
+
+F9
+
+</button>
+
+<button class="program">
+
+F10
+
+</button>
+
+<button class="program">
+
+F11
+
+</button>
+
+<button class="program">
+
+F12
+
+</button>
+
+</div>
+
+<label>Duration</label>
+
+<input
+type="number"
+id="duration"
+placeholder="30">
+
+<label>Calories</label>
+
+<input
+type="number"
+id="calories"
+placeholder="430">
+
+<label>Average HR</label>
+
+<input
+type="number"
+id="avgHRinput"
+placeholder="146">
+
+<label>Maximum HR</label>
+
+<input
+type="number"
+id="maxHR"
+placeholder="184">
+<label>Weight (lb)</label>
+
+<input
+type="number"
+id="weight"
+placeholder="180">
+
+<label>Waist (inches)</label>
+
+<input
+type="number"
+id="waist"
+placeholder="40">
+
+<label>Notes</label>
+
+<textarea
+id="notes"
+rows="4"
+placeholder="How did today's workout feel?"></textarea>
+
+<button id="saveWorkout">
+
+Save Workout
+
+</button>
+
+</section>
+
+
+<!-- RECENT WORKOUTS -->
+
+<section class="card">
+
+<h2>Recent Workouts</h2>
+
+<div id="historyList">
+
+<div class="historyCard">
+
+<h3>No workouts yet</h3>
+
+<p>Your saved workouts will appear here.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROGRESS -->
+
+<section class="card">
+
+<h2>Your Progress</h2>
+
+<div class="progressGrid">
+
+<div class="progressBox">
+
+<div class="progressValue" id="progressWeight">
+
+180
+
+</div>
+
+<div class="progressLabel">
+
+Current Weight
+
+</div>
+
+</div>
+
+<div class="progressBox">
+
+<div class="progressValue" id="progressWaist">
+
+40"
+
+</div>
+
+<div class="progressLabel">
+
+Current Waist
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- QRING -->
+
+<section class="card">
+
+<h2>QRing Health</h2>
+
+<p class="comingSoon">
+
+Synchronization coming soon...
+
+</p>
+
+<div class="healthGrid">
+
+<div class="healthItem">
+
+❤️
+
+<div>
+
+Resting HR
+
+</div>
+
+<strong>--</strong>
+
+</div>
+
+<div class="healthItem">
+
+😴
+
+<div>
+
+Sleep
+
+</div>
+
+<strong>--</strong>
+
+</div>
+
+<div class="healthItem">
+
+👣
+
+<div>
+
+Steps
+
+</div>
+
+<strong>--</strong>
+
+</div>
+
+<div class="healthItem">
+
+🩸
+
+<div>
+
+SpO₂
+
+</div>
+
+<strong>--</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<div>
+
+Reduce Belly Fat
+
+</div>
+
+<div>
+
+Version 3.0
+
+</div>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
